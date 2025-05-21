@@ -1,0 +1,49 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @oerride
+  Widget build(BuildContext context) {
+    const MyApp({Key? key}) : super(key: key);
+    final title = 'Flutterサンプルサンプル';
+    final message = 'サンプル・メッセージ';
+
+    @override
+    Widget build(BuildContext context) {
+      return MaterialApp(
+        title: 'Flutter Demo',
+        theme: MyHomePage(
+          title: this.title,
+          message: this.message,
+
+        ),
+      );
+    }
+  }
+}
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key, required this.title, required this.message})
+      : super(key: key);
+  final String title;
+  final String message;
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Text(
+        widget.message,
+        style: TextStyle(fontSize: 32.0),
+      ),
+    );
+  }
+}
